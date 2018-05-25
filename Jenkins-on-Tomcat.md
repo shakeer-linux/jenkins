@@ -9,27 +9,31 @@ Tomcat8     : http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.15/bi
 ```
 
 Steps:
-1. Installed a Ubunttu 14.04 on Virtual Machine ( IP : 192.168.2.92 )
-2. Installed Oracale JDK 1.8
-3. Installed Tomcat 8 
-4. Installed Jenkins. ( username: jenkins, password: jenkins)
+1. Install a Ubunttu 14.04 on Virtual Machine ( with IP : 192.168.2.92 )
+2. Install Oracale JDK 1.8
+3. Install Tomcat 8 
+4. Install Jenkins. ( username: jenkins, password: jenkins)
 
-**Oracle JDK/JAVA installation.**    
-------------------------
+**Oracle JDK/JAVA installation**    
+
 Step 1: Below is the url to download oracle 1.8
 ```sh
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" <Copy the link url here from official website: http://www.oracle.com/technetwork/java/javase/downloads>
 ```
-Move the tar file into specific directory.
+
+Create and Move the tar file into specific directory.
+
 ```sh
 mkdir /opt/jdk
 tar -xvzf jdk-8u131-linux-x64.tar.gz -C /opt/jdk/
 
 root@ubuntu:~# update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_131/bin/java 300
 root@ubuntu:~# update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_131/bin/javac 300
+```
 
-
+To Check the Java Version
+```
 root@ubuntu:~# java -version
 java version "1.8.0_131"
 Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
@@ -48,7 +52,7 @@ Current 'best' version is '/opt/jdk/jdk1.8.0_131/bin/javac'.
 root@ubuntu:~# 
 ```
 
-Set Environment Variable: for JAVA_HOME
+Set Environment Variable for **JAVA_HOME**
 
 ```sh
 root@ubuntu:~# cat >> /etc/bash.bashrc <<EOF
@@ -129,8 +133,7 @@ http://192.168.2.92:8080/
 
 **Installing Jenkins**     
 
-. Download Jenkins war and move it to Tomcat WebApps Directory.
-. And then open in browser with jenikins
+*Download Jenkins war and move it to **Tomcat WebApps Directory** and then open in browser with jenikins*    
 
 ```sh
 wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
@@ -141,7 +144,7 @@ Then Open in Browser
 
 **http://192.168.2.92:8080/jenkins/**
 
-. After Getting dashboard it will ask for password. So go to the location and copy and paste the password from specified location.
+After Getting dashboard it will ask for password. So go to the location and copy and paste the password from specified location.
 
 like:  
 ```
@@ -158,9 +161,9 @@ password: jenkins
 
 
 
-**Reference Links:
-
+**Reference Links:**
+```
 https://oracle-base.com/articles/linux/apache-tomcat-7-installation-on-linux
 https://www.digitalocean.com/community/tutorials/how-to-manually-install-oracle-java-on-a-debian-or-ubuntu-vps
-
+```
 
