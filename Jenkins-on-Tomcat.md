@@ -13,10 +13,7 @@ Steps:
 3. Installed Tomcat 8 
 4. Installed Jenkins. ( username: jenkins, password: jenkins)
 
-
-
-
-Oracle JDK/JAVA installation.
+**Oracle JDK/JAVA installation.**    
 ------------------------
 Step 1: Below is the url to download oracle 1.8
 
