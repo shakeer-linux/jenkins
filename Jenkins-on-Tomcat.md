@@ -1,6 +1,7 @@
 **Installing Jenkins using war on top of TOMCAT with JAVA jdk**   
 links:  
 -----
+
 Jenkins     : http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 Oracle JDK  : http://www.oracle.com/technetwork/java/javase/downloads
 Tomcat      : http://tomcat.apache.org/download-70.cgi
@@ -16,12 +17,12 @@ Steps:
 **Oracle JDK/JAVA installation.**    
 ------------------------
 Step 1: Below is the url to download oracle 1.8
-
+```sh
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" <Copy the link url here from official website: http://www.oracle.com/technetwork/java/javase/downloads>
-
+```
 Move the tar file into specific directory.
-
+```sh
 mkdir /opt/jdk
 tar -xvzf jdk-8u131-linux-x64.tar.gz -C /opt/jdk/
 
@@ -45,9 +46,11 @@ javac - auto mode
 /opt/jdk/jdk1.8.0_131/bin/javac - priority 300
 Current 'best' version is '/opt/jdk/jdk1.8.0_131/bin/javac'.
 root@ubuntu:~# 
+```
 
 Set Environment Variable: for JAVA_HOME
 
+```sh
 root@ubuntu:~# cat >> /etc/bash.bashrc <<EOF
 > export JAVA_HOME=/opt/jdk/jdk1.8.0_131
 > EOF
@@ -57,13 +60,11 @@ root@ubuntu:~# source /etc/bash.bashrc
 root@ubuntu:~# env | grep JAVA_HOME
 JAVA_HOME=/opt/jdk/jdk1.8.0_131
 root@ubuntu:~# 
-
-----------------------------------------------------------------------------------------------------------------
-Tomcat Installation:
----------------------
+```
+**Tomcat Installation:**   
 
 Check for the Tomcat version for your need : http://tomcat.apache.org/download-70.cgi
-
+```sh
 root@ubuntu:~# mkdir /opt/tomcat8
 root@ubuntu:~# wget http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz
 root@ubuntu:~# tar -xvzf apache-tomcat-8.5.15.tar.gz -C /opt/tomcat8/
@@ -94,9 +95,10 @@ tomcat@ubuntu:~$ ls -l /opt/tomcat8/
 total 4
 drwxr-xr-x 9 tomcat tomcat 4096 May 30 11:23 apache-tomcat-8.5.15
 tomcat@ubuntu:~$ 
+```
 
-Starting TOMCAT
---------------
+**Starting TOMCAT  
+```sh
 tomcat@ubuntu:~$ $CATALINA_HOME/bin/startup.sh
 Using CATALINA_BASE:   /opt/tomcat8/apache-tomcat-8.5.15
 Using CATALINA_HOME:   /opt/tomcat8/apache-tomcat-8.5.15
@@ -114,25 +116,30 @@ tomcat    1611  1610  0 11:36 pts/0    00:00:00 bash
 tomcat    1642     1  3 11:47 pts/0    00:00:02 /opt/jdk/jdk1.8.0_131/bin/java -Djava.util.logging.config.file=/opt/tomcat8/apache-tomcat-8.5.15/
 tomcat    1686  1611  0 11:48 pts/0    00:00:00 ps -ef
 
-To Stop or Shutdown TOMCAT : tomcat@ubuntu:~$ $CATALINA_HOME/bin/shutdown.sh
+```
 
-To Access Tomcat UI Openinweb browser with 8080 port
-
+To Stop or Shutdown TOMCAT : 
+```sh
+tomcat@ubuntu:~$ $CATALINA_HOME/bin/shutdown.sh
+```
+**To Access Tomcat UI Openinweb browser with 8080 port
+```sh
 http://192.168.2.92:8080/
+```
 
-------------------------------------------------------------------------------------------------------
-Installing Jenkins
--------------------
+**Installing Jenkins     
 
 . Download Jenkins war and move it to Tomcat WebApps Directory.
 . And then open in browser with jenikins
 
-wget wget wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+```sh
+wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 mv jenkins.war /opt/tomcat8/apache-tomcat-8.5.15/webapps/
+```
 
 Then Open in Browser
 
-http://192.168.2.92:8080/jenkins/
+**http://192.168.2.92:8080/jenkins/
 
 . After Getting dashboard it will ask for password. So go to the location and copy and paste the password from specified location.
 
@@ -145,9 +152,10 @@ Now you do your deployements as you like.
 
 username: jenkins
 password: jenkins
------------------------------------------------------------------------------------------------------------
 
-Reference Links:
+
+
+**Reference Links:
 
 https://oracle-base.com/articles/linux/apache-tomcat-7-installation-on-linux
 https://www.digitalocean.com/community/tutorials/how-to-manually-install-oracle-java-on-a-debian-or-ubuntu-vps
