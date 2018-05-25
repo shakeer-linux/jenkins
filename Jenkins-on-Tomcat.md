@@ -1,6 +1,6 @@
-**Installing Jenkins using war on top of TOMCAT with JAVA jdk**
-  
-links: 
+**Installing Jenkins using war on top of TOMCAT with JAVA jdk**   
+
+links:  
 -----
 Jenkins     : http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 Oracle JDK  : http://www.oracle.com/technetwork/java/javase/downloads
@@ -9,7 +9,6 @@ Tomcat8     : http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.15/bi
 
 
 Steps:
-
 1. Installed a Ubunttu 14.04 on Virtual Machine ( IP : 192.168.2.92 )
 2. Installed Oracale JDK 1.8
 3. Installed Tomcat 8 
