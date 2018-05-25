@@ -1,12 +1,12 @@
 **Installing Jenkins using war on top of TOMCAT with JAVA jdk**   
-links:  
------
 
+Check below links:
+```sh
 Jenkins     : http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 Oracle JDK  : http://www.oracle.com/technetwork/java/javase/downloads
 Tomcat      : http://tomcat.apache.org/download-70.cgi
 Tomcat8     : http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz
-
+```
 
 Steps:
 1. Installed a Ubunttu 14.04 on Virtual Machine ( IP : 192.168.2.92 )
@@ -97,7 +97,7 @@ drwxr-xr-x 9 tomcat tomcat 4096 May 30 11:23 apache-tomcat-8.5.15
 tomcat@ubuntu:~$ 
 ```
 
-**Starting TOMCAT  
+**Starting TOMCAT**  
 ```sh
 tomcat@ubuntu:~$ $CATALINA_HOME/bin/startup.sh
 Using CATALINA_BASE:   /opt/tomcat8/apache-tomcat-8.5.15
@@ -122,12 +122,12 @@ To Stop or Shutdown TOMCAT :
 ```sh
 tomcat@ubuntu:~$ $CATALINA_HOME/bin/shutdown.sh
 ```
-**To Access Tomcat UI Openinweb browser with 8080 port
+**To Access Tomcat UI Openinweb browser with 8080 port**
 ```sh
 http://192.168.2.92:8080/
 ```
 
-**Installing Jenkins     
+**Installing Jenkins**     
 
 . Download Jenkins war and move it to Tomcat WebApps Directory.
 . And then open in browser with jenikins
@@ -139,12 +139,15 @@ mv jenkins.war /opt/tomcat8/apache-tomcat-8.5.15/webapps/
 
 Then Open in Browser
 
-**http://192.168.2.92:8080/jenkins/
+**http://192.168.2.92:8080/jenkins/**
 
 . After Getting dashboard it will ask for password. So go to the location and copy and paste the password from specified location.
 
-like:  cat /opt/tomcat8/.jenkins/secrets/initialAdminPassword
-       d68fbac621224ac381cffb87e4735fbe
+like:  
+```
+cat /opt/tomcat8/.jenkins/secrets/initialAdminPassword
+d68fbac621224ac381cffb87e4735fbe
+```
 
 Then Install the required plugins and create the username and password for jenkins user.
 
