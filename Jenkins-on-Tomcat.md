@@ -142,7 +142,7 @@ mv jenkins.war /opt/tomcat8/apache-tomcat-8.5.15/webapps/
 
 Then Open in Browser
 ```
-**http://192.168.2.92:8080/jenkins/**
+http://192.168.2.92:8080/jenkins/
 ```
 After Getting dashboard it will ask for password. So go to the location and copy and paste the password from specified location.
 
