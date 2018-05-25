@@ -1,5 +1,4 @@
 **Installing Jenkins using war on top of TOMCAT with JAVA jdk**   
-
 links:  
 -----
 Jenkins     : http://mirrors.jenkins.io/war-stable/latest/jenkins.war
