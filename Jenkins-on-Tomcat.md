@@ -154,10 +154,10 @@ d68fbac621224ac381cffb87e4735fbe
 
 Then Install the required plugins and create the username and password for jenkins user.
 
-Now you do your deployements as you like.
+username: jenkins   
+password: jenkins    
 
-username: jenkins
-password: jenkins
+*Now you do your deployements as you like.
 
 
 
